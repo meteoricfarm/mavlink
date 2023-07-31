@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- XML file for prototyping definitions for common.xml -->
+  <include>ardupilotmega.xml</include>
+  <version>3</version>
+  <dialect>0</dialect>
+  <enums>
+    <enum name="ANOMALY_TYPE">
+      <description>Detected Anomaly Types.</description>
+      <entry value="0" name="MECHANICAL">
+        <description>Mechanical failure.</description>
+      </entry>
+      <entry value="1" name="VIBRATION">
+        <description>Vibration issue.</description>
+      </entry>
+      <entry value="2" name="COMPASS">
+        <description>Compass interference.</description>
+      </entry>
+      <entry value="3" name="GPS">
+        <description>GPS glitch.</description>
+      </entry>
+      <entry value="4" name="POWER">
+        <description>Power issue.</description>
+      </entry>
+    </enum>
+  </enums>
+  <messages>
+    <!-- Detected anomaly info measured by onboard sensors and actuators -->
+    <message id="43000" name="ANOMALY_DETECT">
+      <description>Detected anomaly info measured by onboard sensors and actuators. </description>
+      <field type="uint64_t" name="timestamp" units="us">Timestamp (UNIX epoch time)</field>
+      <field type="uint8_t" name="is_detected" instance="true">whether anomaly has been detected or not</field>
+      <field type="uint8_t" name="anomaly_type" enum="ANOMALY_TYPE">which anomaly has been detected.</field>
+    </message>
+  </messages>
+</mavlink>
