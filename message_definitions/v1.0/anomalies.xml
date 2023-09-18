@@ -8,7 +8,7 @@
     <enum name="ANOMALY_TYPE">
       <description>Detected Anomaly Types.</description>
       <entry value="0" name="STABLE">
-        <description>Mechanical failure.</description>
+        <description>No anomaly detected.</description>
       </entry>
       <entry value="1" name="MECHANICAL">
         <description>Mechanical failure.</description>
@@ -16,13 +16,13 @@
       <entry value="2" name="VIBRATION">
         <description>Vibration issue.</description>
       </entry>
-      <entry value="3" name="COMPASS">
+      <entry value="4" name="COMPASS">
         <description>Compass interference.</description>
       </entry>
-      <entry value="4" name="GPS">
+      <entry value="8" name="GPS">
         <description>GPS glitch.</description>
       </entry>
-      <entry value="5" name="POWER">
+      <entry value="16" name="POWER">
         <description>Power issue.</description>
       </entry>
     </enum>
